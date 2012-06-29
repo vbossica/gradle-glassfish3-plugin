@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.6
+
+version = '1.0-SNAPSHOT'
+group = 'org.vbossica'
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+
+  groovy localGroovy()
+
+  compile gradleApi()
+
+}
+
+install.dependsOn ':build'
+
