@@ -1,0 +1,19 @@
+apply plugin: 'war'
+apply plugin: 'glassfish3'
+
+version = '1.1.RELEASE'
+
+buildscript {
+  repositories {
+    mavenLocal()
+  }
+
+  dependencies {
+    classpath "org.vbossica:gradle-glassfish3-plugin:1.0-SNAPSHOT"
+  }
+}
+
+glassfish3 {
+  asadminExec = file('/usr/share/glassfish3/bin/asadmin')
+  domainDir = file('/var/glassfish3')
+}
